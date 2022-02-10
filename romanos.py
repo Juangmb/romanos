@@ -157,4 +157,4 @@ def romano_a_arabigo2(cadena):
     resultado += simbolos_romanos[cadena[-1]]
     return resultado
 
-print(romano_a_arabigo2(200))
+print(romano_a_arabigo2("XXX"))

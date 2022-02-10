@@ -60,18 +60,3 @@ class RomanosFuncionesAromanoTest(unittest.TestCase):
             romano_a_arabigo2("XD")
         with self.assertRaises(RomanError):
             romano_a_arabigo2("XM")
-
-    
-
-
-"""
-from romanos import arabigo_a_romano, romano_a_arabigo, romano_a_arabigo2
-
-print(arabigo_a_romano(36))
-print(arabigo_a_romano(44))
-
-print(romano_a_arabigo2("MMCCCXXXIV"))
-print(romano_a_arabigo2("MMMMM"))
-
-print(romano_a_arabigo2("VVV"))
-"""
