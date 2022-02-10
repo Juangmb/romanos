@@ -18,6 +18,16 @@ class RomanosFuncionesTest(unittest.TestCase):
             arabigo_a_romano(-23)
     
 class RomanosFuncionesAromanoTest(unittest.TestCase):
+    def test_romano_a_arabigo_solo_acepta_cadena(self):
+        with self.assertRaises(TypeError):
+            romano_a_arabigo2(200)
+    
+    def test_romano_a_arabigo_solo_acepta_caracteres_validos(self):
+        with self.assertRaises(RomanError):
+            romano_a_arabigo2("xx")
+        with self.assertRaises(RomanError):
+            romano_a_arabigo2("ABEFGHJKNÑOPQRSTUWYZ")
+
     def test_romano_a_arabigo_tres_repeticiones_OK(self):
         self.assertEqual(romano_a_arabigo2("III"), 3)
     

@@ -72,6 +72,16 @@ simbolos_romanos = {
     "M"  : 1000
 }
 
+def valida_str(cadena):
+    if not isinstance(cadena, str):
+        raise TypeError(f"{cadena} debe ser de tipo str")
+    if cadena != cadena.upper():
+        raise RomanError(f"{cadena} debe escribirse en mayusculas")
+    caracteres_validos = ["M","D","C","L","X","V","I"]
+    for caracter in cadena:
+        if caracter not in caracteres_validos:
+            raise RomanError(f"{caracter} no es un caracter valido en los numeros romanos")
+
 def listaValores(n):
     listaValores = []
     for caracter in n:
@@ -115,6 +125,7 @@ def valida_resta(cadena):
         numeroAnterior = numero
 
 def romano_a_arabigo(cadena):
+    valida_str(cadena)
     valida_repeticiones(cadena)
     valida_resta(cadena)
     arabigo = 0
@@ -130,6 +141,7 @@ def romano_a_arabigo(cadena):
     return arabigo
     
 def romano_a_arabigo2(cadena):
+    valida_str(cadena)
     valida_repeticiones(cadena)
     valida_resta(cadena)
     resultado = 0
@@ -145,4 +157,4 @@ def romano_a_arabigo2(cadena):
     resultado += simbolos_romanos[cadena[-1]]
     return resultado
 
-print(romano_a_arabigo2("C"))
+print(romano_a_arabigo2(200))
