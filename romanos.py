@@ -29,6 +29,11 @@ def arabigo_a_romano(n):
     valida_numero(n)
     romano = ""
     resto = None
+    if n > 3999:
+        romano += "("
+        romano += arabigo_a_romano(n//1000)
+        n = n % 1000
+        romano +=")"
     while resto != 0:
         for simbolo, valor in numerosT:
             if n >= valor:
@@ -145,7 +150,7 @@ def romano_a_arabigo2(cadena):
     valida_repeticiones(cadena)
     valida_resta(cadena)
     resultado = 0
-   
+
     for ix in range(len(cadena)-1):
         letra = cadena[ix]
         siguiente = cadena[ix + 1]
@@ -157,4 +162,4 @@ def romano_a_arabigo2(cadena):
     resultado += simbolos_romanos[cadena[-1]]
     return resultado
 
-print(romano_a_arabigo2("XXX"))
+print("Romano a arabigo: ",romano_a_arabigo2("XIII"),"\nArabigo a romano: ",arabigo_a_romano(13),"\nArabigo a romano +4000: ",arabigo_a_romano(7789))
