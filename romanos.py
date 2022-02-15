@@ -161,5 +161,3 @@ def romano_a_arabigo2(cadena):
 
     resultado += simbolos_romanos[cadena[-1]]
     return resultado
-
-print("Romano a arabigo: ",romano_a_arabigo2("XIII"),"\nArabigo a romano: ",arabigo_a_romano(13),"\nArabigo a romano +4000: ",arabigo_a_romano(7789))
