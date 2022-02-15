@@ -161,3 +161,8 @@ def romano_a_arabigo2(cadena):
 
     resultado += simbolos_romanos[cadena[-1]]
     return resultado
+
+if __name__ == "__main__":
+    print("Arabigo a Romano: ",arabigo_a_romano(789))
+    print("Romano a Arabigo mio: ",romano_a_arabigo("XII"))
+    print("Romano a Arabigo Mon: ", romano_a_arabigo2("XVIX"))
